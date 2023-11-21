@@ -22,6 +22,11 @@ app.add_middleware(
   allow_headers=["*"],
 )
 
+# API Endpoints
+logger.info('Adding v1 endpoints..')
+app.include_router(v1_router, prefix='/v1')
+app.add_exception_handler(HTTPException, events.on_http_error)
+
 # Event handlers
 @app.on_event("startup")
 async def startup():
