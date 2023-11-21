@@ -55,7 +55,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: iverly/gpt4all-api
-          short-description: A Serverless runtime in Rust
+          short-description: A simple API for GPT4All models following OpenAI specifications
   create-github-release:
     runs-on: ubuntu-latest
     steps:
