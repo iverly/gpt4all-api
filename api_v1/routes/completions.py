@@ -99,7 +99,7 @@ async def completions(request: CompletionRequest):
     else:
       request.prompt = request.prompt[0]
 
-  model = GPT4All(model_name=settings.model, model_path=settings.gpt4all_path)
+  model = GPT4All(model_name=settings.model, model_path=settings.gpt4all_path, n_threads=settings.n_threads)
   output = model.generate(prompt=request.prompt,
                           max_tokens=request.max_tokens,
                           streaming=request.stream,
