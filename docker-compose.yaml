@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  api:
+    build:
+      context: .
+    environment:
+      - MODEL=gpt4all-falcon-q4_0.gguf
+      - GPT4ALL_PATH=/models
+    ports:
+      - 8000:8000
+    volumes:
+      - ./models:/models
